@@ -23,15 +23,23 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
 import RTLLayout from "layouts/RTL.js";
+import Counter from './features/counter/Counter'
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <HashRouter>
+  <Provider store={store}>
+     <HashRouter>
     <Switch>
+
       <Route path={`/auth`} component={AuthLayout} />
       <Route path={`/admin`} component={AdminLayout} />
       <Route path={`/rtl`} component={RTLLayout} />
+      <Route path={`/counter`} component={Counter} />
       <Redirect from={`/`} to='/admin/dashboard' />
     </Switch>
-  </HashRouter>,
+  </HashRouter>
+  </Provider>
+  ,
   document.getElementById("root")
 );
