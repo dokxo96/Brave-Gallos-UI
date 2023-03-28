@@ -36,9 +36,7 @@
     "stylis": "^4.0.10",
     "stylis-plugin-rtl": "^2.1.0"
   },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
-  },
+  
   "target": "web",
   "scripts": {
     "start": "react-scripts start",

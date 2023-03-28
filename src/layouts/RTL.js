@@ -18,7 +18,7 @@
 
 // Chakra imports
 import { ChakraProvider, Portal, useDisclosure } from "@chakra-ui/react";
-import { RtlProvider } from "components/RTLProvider/RTLProvider";
+// import { RtlProvider } from "components/RTLProvider/RTLProvider";
 import Configurator from "components/Configurator/Configurator";
 import Footer from "components/Footer/Footer.js";
 // Layout components
@@ -114,7 +114,7 @@ export default function Dashboard(props) {
   // Chakra Color Mode
   return (
     <ChakraProvider theme={theme} resetCss={false}>
-      <RtlProvider>
+      
         <Sidebar
           routes={routes}
           logoText={"VISION UI FREE"}
@@ -169,7 +169,7 @@ export default function Dashboard(props) {
             onTransparent={() => setSidebarVariant("transparent")}
           />
         </MainPanel>
-      </RtlProvider>
+      
     </ChakraProvider>
   );
 }
