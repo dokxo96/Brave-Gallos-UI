@@ -23,7 +23,8 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
 import RTLLayout from "layouts/RTL.js";
-import Counter from './features/counter/Counter'
+import Counter from './features/counter/Counter';
+import Cointoss from './views/Games/Cointoss';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 
@@ -36,6 +37,7 @@ ReactDOM.render(
       <Route path={`/admin`} component={AdminLayout} />
       <Route path={`/rtl`} component={RTLLayout} />
       <Route path={`/counter`} component={Counter} />
+      <Route path={`/cointoss`} component={Cointoss} />
       <Redirect from={`/`} to='/admin/dashboard' />
     </Switch>
   </HashRouter>

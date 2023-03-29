@@ -63,7 +63,7 @@ export default function HeaderLinks(props) {
       flexDirection='row'>
         <SidebarResponsive
         p={4}
-        
+        gap={2}
         iconColor='gray.500'
         logoText={props.logoText}
         secondary={props.secondary}
@@ -71,7 +71,7 @@ export default function HeaderLinks(props) {
         // logo={logo}
         {...rest}
       />
-      <InputGroup
+      {/* <InputGroup
         cursor='pointer'
         bg={inputBg}
         borderRadius='15px'
@@ -107,13 +107,14 @@ export default function HeaderLinks(props) {
           placeholder='Type here...'
           borderRadius='inherit'
         />
-      </InputGroup>
+      </InputGroup> */}
        
         <Button
          onClick={
           connectMetamask
          }          
           p={4}
+          mx={4}
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
           bgColor={"#f26e02"}
@@ -167,9 +168,7 @@ export default function HeaderLinks(props) {
             </MenuItem>
             <MenuItem
               borderRadius='8px'
-              _hover={{
-                bg: "transparent",
-              }}
+               
               _active={{
                 bg: "transparent",
               }}

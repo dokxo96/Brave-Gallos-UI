@@ -265,7 +265,7 @@ export function SidebarResponsive(props) {
   // this function creates the links and collapses that appear in the sidebar (left menu)
   const createLinks = (routes) => {
     // Chakra Color Mode
-    const activeBg = "#1A1F37";
+    const activeBg = "#eb6a07";
     const inactiveBg = "#1A1F37";
     const activeColor = "white";
     const inactiveColor = "white";
@@ -456,7 +456,7 @@ export function SidebarResponsive(props) {
         <DrawerOverlay />
         <DrawerContent
           backdropFilter='blur(10px)'
-          bg='linear-gradient(90deg, rgba(10, 54, 1, 0.60) 100%, rgba(10, 54, 1, 0) 10%); '
+          bg='linear-gradient(90deg, rgba(10, 54, 1, 0.30) 100%, rgba(10, 54, 1, 0) 10%); '
           w='250px'
           maxW='250px'
           ms={{

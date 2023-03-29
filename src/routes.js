@@ -24,6 +24,7 @@ import RTLPage from "views/RTL/RTLPage.js";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
+import Cointoss from "views/Games/Cointoss";
 
 import {
   HomeIcon,
@@ -61,6 +62,23 @@ var dashRoutes = [
     layout: "/admin",
   },
   
+  {
+    name: "GAMES",
+    category: "account",
+    rtlName: "صفحات",
+    state: "pageCollapse",
+    views: [
+      {
+        path: "/cointoss",
+        name: "Cointoss",
+        icon: <PersonIcon color='inherit' />,
+        secondaryNavbar: true,
+        component: Cointoss,
+        layout: "/admin",
+      },
+      
+    ],
+  },
   {
     name: "ACCOUNT PAGES",
     category: "account",
