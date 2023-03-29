@@ -42,6 +42,19 @@ export default function HeaderLinks(props) {
     mainText = "white";
   }
   const settingsRef = React.useRef();
+
+  const connectMetamask= ()=>{
+    if(window.ethereum){
+      alert("Metamask Installed!!")
+      window.ethereum.request({method:'eth_requestAccounts'})
+      .then(res=>{
+              // Return the address of the wallet
+              console.log(res) 
+      })
+    }else{
+      alert("install metamask extension!!")
+    }
+  }
   return (
     <Flex
       pe={{ sm: "0px", md: "16px" }}
@@ -95,9 +108,11 @@ export default function HeaderLinks(props) {
           borderRadius='inherit'
         />
       </InputGroup>
-      <NavLink to='/auth/signin'>
+       
         <Button
-                   
+         onClick={
+          connectMetamask
+         }          
           p={4}
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
@@ -107,7 +122,7 @@ export default function HeaderLinks(props) {
            >
           <Text display={{ sm: "none", md: "flex" }}>Connect</Text>
         </Button>
-      </NavLink>
+       
       
       <SettingsIcon
         cursor='pointer'
