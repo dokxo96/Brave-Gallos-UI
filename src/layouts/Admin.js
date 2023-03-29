@@ -114,23 +114,23 @@ export default function Dashboard(props) {
   // Chakra Color Mode
   return (
     <ChakraProvider theme={theme} resetCss={false}>
-      <Sidebar
+      {/* <Sidebar
         routes={routes}
-        logoText={"VISION UI FREE"}
+        logoText={"Brave Gallos  | Casino"}
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
-      />
+      /> */}
       <MainPanel
         ref={mainPanel}
         w={{
           base: "100%",
-          xl: "calc(100% - 275px)",
+          xl: "calc(100% )",
         }}>
         <Portal>
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"VISION UI FREE"}
+            logoText={"Brave Gallos | Casino online"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}

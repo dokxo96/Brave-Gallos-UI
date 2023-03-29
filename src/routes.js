@@ -60,14 +60,7 @@ var dashRoutes = [
     component: Billing,
     layout: "/admin",
   },
-  {
-    path: "/rtl-support-page",
-    name: "RTL",
-    rtlName: "آرتيإل",
-    icon: <SupportIcon color='inherit' />,
-    component: RTLPage,
-    layout: "/rtl",
-  },
+  
   {
     name: "ACCOUNT PAGES",
     category: "account",
@@ -99,6 +92,7 @@ var dashRoutes = [
         secondaryNavbar: true,
         component: SignUp,
         layout: "/auth",
+        
       },
     ],
   },

@@ -31,7 +31,7 @@ function Sidebar(props) {
   // this is for the rest of the collapses
   const [state, setState] = React.useState({});
   const mainPanel = React.useRef();
-  let variantChange = "0.2s linear";
+  let variantChange = "0.4s linear";
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname === routeName ? "active" : "";
@@ -40,7 +40,7 @@ function Sidebar(props) {
   const createLinks = (routes) => {
     const { sidebarVariant } = props;
     // Chakra Color Mode
-    let activeBg = "#1A1F37";
+    let activeBg = "#0a1c01";
     let inactiveBg = "#1A1F37";
     let activeColor = "white";
     let inactiveColor = "white";
@@ -189,9 +189,9 @@ function Sidebar(props) {
   //  BRAND
   //  Chakra Color Mode
   let sidebarBg =
-    "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)";
+    "linear-gradient(111.84deg, rgba(7, 33, 1, 0.94) 59.3%, rgba(7, 33, 1, 0) 100%)";
   let sidebarRadius = "16px";
-  let sidebarMargins = "16px 0px 16px 16px";
+  let sidebarMargins = "0px 0px 0px 16px";
   var brand = (
     <Box pt={"25px"} mb='12px'>
       <Link
@@ -204,11 +204,11 @@ function Sidebar(props) {
         justifyContent='center'
         alignItems='center'
         fontSize='11px'>
-        <SimmmpleLogoWhite w='22px' h='22px' me='10px' mt='2px' />
+        <SimmmpleLogoWhite w='22px' h='32px' me='10px' mt='2px' />
         <Box
           bg='linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%)'
           bgClip='text'>
-          <Text fontSize='sm' letterSpacing='3px' mt='3px' color='transparent'>
+          <Text fontSize='lg' letterSpacing='5px' mt='2px' color='transparent'>
             {logoText}
           </Text>
         </Box>
@@ -219,12 +219,13 @@ function Sidebar(props) {
 
   // SIDEBAR
   return (
-    <Box ref={mainPanel}>
+    <Box  ref={mainPanel}>
       <Box display={{ sm: "none", xl: "block" }} position='fixed'>
         <Box
           bg={sidebarBg}
           backdropFilter='blur(10px)'
           transition={variantChange}
+          boxShadow='outline'
           w='260px'
           maxW='260px'
           ms={{
@@ -270,9 +271,7 @@ export function SidebarResponsive(props) {
     const inactiveColor = "white";
 
     return routes.map((prop, key) => {
-      if (prop.redirect) {
-        return null;
-      }
+      if (prop.redirect) { return null;}
       if (prop.category) {
         var st = {};
         st[prop["state"]] = !state[prop.state];
@@ -318,13 +317,14 @@ export function SidebarResponsive(props) {
               }}
               py='12px'
               borderRadius='15px'
-              _hover='none'
+               
               w='100%'
               _active={{
                 bg: "inherit",
                 transform: "none",
                 borderColor: "transparent",
               }}
+              
               _focus={{
                 boxShadow: "none",
               }}>
@@ -333,7 +333,7 @@ export function SidebarResponsive(props) {
                   <Icon>{prop.icon}</Icon>
                 ) : (
                   <IconBox
-                    bg='brand.200'
+                    bg='green.900'
                     color='white'
                     h='30px'
                     w='30px'
@@ -382,7 +382,7 @@ export function SidebarResponsive(props) {
                 ) : (
                   <IconBox
                     bg={inactiveBg}
-                    color='brand.200'
+                    color='green.200'
                     h='30px'
                     w='30px'
                     me='12px'>
@@ -423,7 +423,7 @@ export function SidebarResponsive(props) {
           bg='linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%)'
           bgClip='text'>
           <Text fontSize='sm' letterSpacing='3px' mt='3px' color='transparent'>
-            {logoText}
+            {logoText + "2"}
           </Text>
         </Box>
       </Link>
@@ -437,7 +437,7 @@ export function SidebarResponsive(props) {
   // Color variables
   return (
     <Flex
-      display={{ sm: "flex", xl: "none" }}
+      display={{ sm: "flex"}}
       ref={mainPanel}
       alignItems='center'>
       <HamburgerIcon
@@ -445,7 +445,7 @@ export function SidebarResponsive(props) {
         w='18px'
         h='18px'
         ref={btnRef}
-        colorScheme='teal'
+        colorScheme='red'
         onClick={onOpen}
       />
       <Drawer
@@ -456,7 +456,7 @@ export function SidebarResponsive(props) {
         <DrawerOverlay />
         <DrawerContent
           backdropFilter='blur(10px)'
-          bg='linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%); '
+          bg='linear-gradient(90deg, rgba(10, 54, 1, 0.60) 100%, rgba(10, 54, 1, 0) 10%); '
           w='250px'
           maxW='250px'
           ms={{
@@ -477,7 +477,7 @@ export function SidebarResponsive(props) {
               <Stack direction='column' mb='40px'>
                 <Box>{links}</Box>
               </Stack>
-              <SidebarHelp></SidebarHelp>
+             
             </Box>
           </DrawerBody>
         </DrawerContent>

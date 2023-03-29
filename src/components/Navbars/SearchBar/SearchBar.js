@@ -30,7 +30,7 @@ export function SearchBar(props) {
   const { variant, children, ...rest } = props;
   // Chakra Color Mode
   const searchIconColor = "gray.700";
-  const inputBg = "gray.800";
+  const inputBg = "red.800";
   return (
     <InputGroup bg={inputBg} borderRadius='15px' w='200px'>
       <InputLeftElement

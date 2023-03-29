@@ -48,6 +48,16 @@ export default function HeaderLinks(props) {
       w={{ sm: "100%", md: "auto" }}
       alignItems='center'
       flexDirection='row'>
+        <SidebarResponsive
+        p={4}
+        
+        iconColor='gray.500'
+        logoText={props.logoText}
+        secondary={props.secondary}
+        routes={routes}
+        // logo={logo}
+        {...rest}
+      />
       <InputGroup
         cursor='pointer'
         bg={inputBg}
@@ -87,36 +97,18 @@ export default function HeaderLinks(props) {
       </InputGroup>
       <NavLink to='/auth/signin'>
         <Button
-          ms='0px'
-          px='0px'
+                   
+          p={4}
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
-          variant='transparent-with-icon'
-          rightIcon={
-            document.documentElement.dir ? (
-              ""
-            ) : (
-              <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
-            )
-          }
-          leftIcon={
-            document.documentElement.dir ? (
-              <ProfileIcon color={navbarIcon} w='22px' h='22px' me='0px' />
-            ) : (
-              ""
-            )
-          }>
-          <Text display={{ sm: "none", md: "flex" }}>Sign In</Text>
+          bgColor={"#f26e02"}
+           
+          
+           >
+          <Text display={{ sm: "none", md: "flex" }}>Connect</Text>
         </Button>
       </NavLink>
-      <SidebarResponsive
-        iconColor='gray.500'
-        logoText={props.logoText}
-        secondary={props.secondary}
-        routes={routes}
-        // logo={logo}
-        {...rest}
-      />
+      
       <SettingsIcon
         cursor='pointer'
         ms={{ base: "16px", xl: "0px" }}

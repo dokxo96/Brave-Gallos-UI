@@ -4,7 +4,9 @@ export const bgAdmin = {
   styles: {
     global: (props) => ({
       body: {
-        bgImage: bgBody,
+        //Admin bg
+        bgGradient:'linear(to-r, #161917, #161917)',
+        
         bgSize: "cover",
         bgPosition: "center center",
       },
